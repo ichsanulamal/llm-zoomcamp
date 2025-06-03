@@ -1,0 +1,21 @@
+[project]
+name = "llm-zoomcamp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "elasticsearch>=9.0.1",
+    "minsearch>=0.0.2",
+    "ollama>=0.5.1",
+    "openai>=1.82.1",
+    "pandas>=2.2.3",
+    "pyautogen>=0.9",
+    "scikit-learn>=1.6.1",
+    "tqdm>=4.67.1",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
