@@ -55,9 +55,6 @@ pip install elasticsearch
 
 Which function do you use for adding your data to elastic?
 
-* `insert`
-* `index`
-* `put`
 * `add`
 
 ## Q3. Searching
