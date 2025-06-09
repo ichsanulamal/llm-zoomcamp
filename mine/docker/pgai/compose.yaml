@@ -1,0 +1,38 @@
+services:
+  timescaledb:
+    image: timescale/timescaledb-ha:pg17
+    container_name: timescaledb
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5444:5432"
+    volumes:
+      - timescaledb_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  timescaledb_data:
+    driver: local
+
+# name: pgai 
+# services:
+#  db:
+#    image: timescale/timescaledb-ha:pg17
+#    environment:
+#      POSTGRES_PASSWORD: postgres
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - data:/home/postgres/pgdata/data
+#  vectorizer-worker:
+#    image: timescale/pgai-vectorizer-worker:latest
+#    environment:
+#      PGAI_VECTORIZER_WORKER_DB_URL: postgres://postgres:postgres@db:5432/postgres
+#      OLLAMA_HOST: http://localhost:11434
+#    command: [ "--poll-interval", "5s" ]
+# #  ollama:
+# #    image: ollama/ollama
+# volumes:
+#  data:
